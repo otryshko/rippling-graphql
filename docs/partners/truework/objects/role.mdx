@@ -1,0 +1,26 @@
+---
+id: role
+title: Role
+---
+
+Role with the company
+
+```graphql
+type Role implements Node {
+  id: ID!
+  company: Company!
+  employee: Employee
+}
+```
+
+### Fields
+
+#### `id` ([`ID!`](/docs/partners/truework/scalars/id))
+
+#### `company` ([`Company!`](/docs/partners/truework/objects/company))
+
+#### `employee` ([`Employee`](/docs/partners/truework/objects/employee))
+
+### Interfaces
+
+#### [`Node`](/docs/partners/truework/interfaces/node)

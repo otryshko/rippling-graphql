@@ -1,0 +1,151 @@
+type Query {
+  node(id: ID!): Node
+  """
+  Returns information about an employee a loan application approval
+  """
+  employeeBySsn(ssn: String!): Employee
+}
+
+interface Node {
+  id: ID!
+}
+
+type PageInfo {
+  hasNextPage: Boolean!
+  hasPreviousPage: Boolean!
+  startCursor: String
+  endCursor: String
+}
+
+type Company {
+  id: ID!
+
+  # Public company name
+  name: String
+  status: CompanyStatus
+}
+
+enum CompanyStatus {
+  ACTIVE
+  DEACTIVATION_REQUESTED
+  INACTIVE
+}
+
+enum EmploymentType {
+  CONTRACTOR
+  SALARIED_FT
+  SALARIED_PT
+  HOURLY_FT
+  HOURLY_PT
+  TEMP
+}
+
+type Employee implements Node {
+  id: ID!
+  ssn: String
+  fullName: String
+  firstName: String
+  lastName: String
+  dob: String
+  email: String
+  phone: String
+  homeAddress: Address
+  roles: [Role!]
+  consent: EmployeeConsent
+  payroll: EmployeePayroll
+}
+
+type EmployeePayroll {
+  last3Years: [YearlyCompensation]
+  paystubs: [Paystub]
+}
+
+type YearlyCompensation {
+  year: Int!
+  compensation: PayrollCompensation
+}
+
+scalar DateTime
+
+scalar Date
+
+"""
+Container for employee consent state
+"""
+type EmployeeConsent {
+  state: ConsentState
+  stateChangedAt: DateTime
+}
+
+"""
+Role with the company
+"""
+type Role implements Node {
+  id: ID!
+  company: Company!
+  employee: Employee
+}
+
+type CompanyTaxInfo {
+  id: ID!
+  ein: String!
+}
+"""
+Employee address type
+"""
+type Address {
+  streetLine1: String
+  streetLine2: String
+  zip: String
+  city: String
+  state: String
+  country: String
+}
+
+type Mutation {
+  requestEmployeeConsentByThirdParty(employeeId: ID!): ConsentState!
+}
+
+"""
+Defines possible states of employee or company sharing their sensitive info 
+"""
+enum ConsentState {
+  """
+  Truework request is pending, waiting for an employee response or autoapproval
+  """
+  PENDING
+  """
+  Sensitive data can be shared with partners
+  """  
+  GRANTED
+  """
+  Employee declined a request to share their sensitive info
+  """
+  DENIED
+}
+
+scalar Decimal
+
+type PayrollCompensation {
+  gross: Decimal
+  net: Decimal
+  base: Decimal
+  bonus: Decimal
+  commission: Decimal
+  overtime: Decimal
+  other: Decimal
+}
+
+type Paystub {
+  payDate: Date
+  payPeriodStartDate: Date
+  payPeriodEndDate: Date
+  grossEarnings: Decimal
+  netEarnings: Decimal
+  baseAmount: Decimal
+  bonusAmount: Decimal
+  overtimeAmount: Decimal
+  commissionAmount: Decimal
+  otherAmount: Decimal
+  payPeriodHours: Decimal
+}

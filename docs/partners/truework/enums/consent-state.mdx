@@ -1,0 +1,28 @@
+---
+id: consent-state
+title: ConsentState
+---
+
+Defines possible states of employee or company sharing their sensitive info
+
+```graphql
+enum ConsentState {
+  PENDING
+  GRANTED
+  DENIED
+}
+```
+
+### Values
+
+#### `PENDING`
+
+Truework request is pending, waiting for an employee response or autoapproval
+
+#### `GRANTED`
+
+Sensitive data can be shared with partners
+
+#### `DENIED`
+
+Employee declined a request to share their sensitive info
