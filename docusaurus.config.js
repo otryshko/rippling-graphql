@@ -18,13 +18,14 @@ const config = {
   ],
   title: 'Rippling APIs',
   tagline: 'Rippling APIs',
-  url: 'https://rippling.com',
-  baseUrl: '/',
+  url: 'https://otryshko.github.io',
+  baseUrl: '/rippling-graphql-doc/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
-  organizationName: 'rippling', // Usually your GitHub org/user name.
-  projectName: 'rippling-api-graphql', // Usually your repo name.
+  organizationName: 'otryshko', // Usually your GitHub org/user name.
+  projectName: 'rippling-graphql-doc', // Usually your repo name.
+  trailingSlash: false,
 
   presets: [
     [
@@ -34,13 +35,13 @@ const config = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
-          editUrl: 'https://github.com/facebook/docusaurus/edit/main/website/',
+          //editUrl: 'https://github.com/facebook/docusaurus/edit/main/website/',
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
-          editUrl:
-            'https://github.com/facebook/docusaurus/edit/main/website/blog/',
+          //editUrl:
+          //  'https://github.com/facebook/docusaurus/edit/main/website/blog/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
