@@ -34,7 +34,7 @@ where `mF_9.B5f-4.1JqM` is a sample token, to be replaced with the one you obtai
 GET /api/apps/external/samplepartner/graphql HTTP/1.1
 Host: rippling.com
 Authorization: Bearer mF_9.B5f-4.1JqM
-Content-Type: application/jsonn
+Content-Type: application/json
 ```
 
 
