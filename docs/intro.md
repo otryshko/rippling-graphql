@@ -19,21 +19,29 @@ API is available at
 |--------------|-----------------------|
 | sandbox      | sandbox.rippling.com  |
 | production   | rippling.com          |
- 
 
+ 
 
 ## Authentication
 
 All calls to Rippling APIs must be autenticated. Please reach out to your Rippling contact to get a token you will use to connect to Rippling.
 
+### Authentication in playground
+
+The token must be added to HTTP HEADER window of the playground:
+![Docusaurus](/img/authinplayground.png)
+
+
+### Authentication in code
+
 The token must be passed as a part of bearer authentication schema:
-`Authorization: Bearer mF_9.B5f-4.1JqM`
-where `mF_9.B5f-4.1JqM` is a sample token, to be replaced with the one you obtained from Rippling
+`Authorization: Bearer OzQSAbpW5fsCbA0eKf2Ynr4u8ILCFV20bgRCAZPo5wOrQxnTn80yVDrsEdfwee`
+where `OzQSAbpW5fsCbA0eKf2Ynr4u8ILCFV20bgRCAZPo5wOrQxnTn80yVDrsEdfwee` is a sample token, to be replaced with the one you obtained from Rippling
 
 ``` 
 GET /api/apps/external/samplepartner/graphql HTTP/1.1
 Host: rippling.com
-Authorization: Bearer mF_9.B5f-4.1JqM
+Authorization: Bearer OzQSAbpW5fsCbA0eKf2Ynr4u8ILCFV20bgRCAZPo5wOrQxnTn80yVDrsEdfwee
 Content-Type: application/json
 ```
 
