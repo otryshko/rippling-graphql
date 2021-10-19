@@ -3,7 +3,7 @@ id: employee
 title: Employee
 ---
 
-No description
+Employee, representing a physical person
 
 ```graphql
 type Employee implements Node {
@@ -18,7 +18,6 @@ type Employee implements Node {
   homeAddress: Address
   roles: [Role!]
   consent: EmployeeConsent
-  payroll: EmployeePayroll
 }
 ```
 
@@ -26,7 +25,11 @@ type Employee implements Node {
 
 #### `id` ([`ID!`](/docs/partners/truework/scalars/id))
 
+Relay-compable employee id
+
 #### `ssn` ([`String`](/docs/partners/truework/scalars/string))
+
+Goverment ID of the person
 
 #### `fullName` ([`String`](/docs/partners/truework/scalars/string))
 
@@ -36,6 +39,8 @@ type Employee implements Node {
 
 #### `dob` ([`String`](/docs/partners/truework/scalars/string))
 
+Date of birth
+
 #### `email` ([`String`](/docs/partners/truework/scalars/string))
 
 #### `phone` ([`String`](/docs/partners/truework/scalars/string))
@@ -44,9 +49,11 @@ type Employee implements Node {
 
 #### `roles` ([`[Role!]`](/docs/partners/truework/objects/role))
 
+An array of employment positions
+
 #### `consent` ([`EmployeeConsent`](/docs/partners/truework/objects/employee-consent))
 
-#### `payroll` ([`EmployeePayroll`](/docs/partners/truework/objects/employee-payroll))
+Has an employee consented to share employment history with Truework
 
 ### Interfaces
 

@@ -1,12 +1,12 @@
 ---
-id: employee-payroll
-title: EmployeePayroll
+id: role-payroll
+title: RolePayroll
 ---
 
-No description
+Payroll-related section of a role
 
 ```graphql
-type EmployeePayroll {
+type RolePayroll {
   last3Years: [YearlyCompensation]
   paystubs: [Paystub]
 }
@@ -16,4 +16,8 @@ type EmployeePayroll {
 
 #### `last3Years` ([`[YearlyCompensation]`](/docs/partners/truework/objects/yearly-compensation))
 
+Yearly compensation for the last 3 years
+
 #### `paystubs` ([`[Paystub]`](/docs/partners/truework/objects/paystub))
+
+Paystubs for the year-to-date

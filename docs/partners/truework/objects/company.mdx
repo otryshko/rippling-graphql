@@ -9,7 +9,11 @@ No description
 type Company {
   id: ID!
   name: String
+  taxInfos: [CompanyTaxInfo!]!
+  workEmailDomain: String
   status: CompanyStatus
+  consent: ConsentState
+  address: Address
 }
 ```
 
@@ -17,6 +21,24 @@ type Company {
 
 #### `id` ([`ID!`](/docs/partners/truework/scalars/id))
 
+Relay-compable company id
+
 #### `name` ([`String`](/docs/partners/truework/scalars/string))
 
+Public company name
+
+#### `taxInfos` ([`[CompanyTaxInfo!]!`](/docs/partners/truework/objects/company-tax-info))
+
+A list of Employer Identification Numbers registered by the company
+
+#### `workEmailDomain` ([`String`](/docs/partners/truework/scalars/string))
+
 #### `status` ([`CompanyStatus`](/docs/partners/truework/enums/company-status))
+
+#### `consent` ([`ConsentState`](/docs/partners/truework/enums/consent-state))
+
+if DENIED, company info will not be exposed to Truework
+
+#### `address` ([`Address`](/docs/partners/truework/objects/address))
+
+Company work address

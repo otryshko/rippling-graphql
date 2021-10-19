@@ -1,7 +1,6 @@
 type Query {
-  node(id: ID!): Node
   """
-  Returns information about an employee a loan application approval
+  Truework: return information about an employee for loan validation
   """
   employeeBySsn(ssn: String!): Employee
 }
@@ -18,11 +17,32 @@ type PageInfo {
 }
 
 type Company {
+  """
+  Relay-compable company id
+  """
   id: ID!
 
-  # Public company name
+  """
+  Public company name
+  """
   name: String
+
+  """
+  A list of Employer Identification Numbers registered by the company
+  """
+  taxInfos: [CompanyTaxInfo!]!
+  workEmailDomain: String
   status: CompanyStatus
+
+  """
+  if DENIED, company info will not be exposed to Truework
+  """
+  consent: ConsentState
+
+  """
+  Company work address
+  """
+  address: Address
 }
 
 enum CompanyStatus {
@@ -40,26 +60,60 @@ enum EmploymentType {
   TEMP
 }
 
+"""
+Employee, representing a physical person
+"""
 type Employee implements Node {
+  """
+  Relay-compable employee id
+  """
   id: ID!
+
+  """
+  Goverment ID of the person
+  """
   ssn: String
   fullName: String
   firstName: String
   lastName: String
+
+  """
+  Date of birth
+  """
   dob: String
   email: String
   phone: String
   homeAddress: Address
+
+  """
+  An array of employment positions
+  """
   roles: [Role!]
+
+  """
+  Has an employee consented to share employment history with Truework
+  """
   consent: EmployeeConsent
-  payroll: EmployeePayroll
 }
 
-type EmployeePayroll {
+"""
+Payroll-related section of a role
+"""
+type RolePayroll {
+  """
+  Yearly compensation for the last 3 years
+  """
   last3Years: [YearlyCompensation]
+
+  """
+  Paystubs for the year-to-date
+  """
   paystubs: [Paystub]
 }
 
+"""
+Yearly compensation
+"""
 type YearlyCompensation {
   year: Int!
   compensation: PayrollCompensation
@@ -69,30 +123,34 @@ scalar DateTime
 
 scalar Date
 
-"""
-Container for employee consent state
-"""
 type EmployeeConsent {
   state: ConsentState
-  stateChangedAt: DateTime
+  pendingStartedAt: DateTime
 }
 
 """
-Role with the company
+Role of a person at the company
 """
 type Role implements Node {
   id: ID!
-  company: Company!
+
+  """
+  Employed at this company
+  """
+  company: Company
   employee: Employee
+
+  """
+  Payroll info related to this company and this employee
+  """
+  payroll: RolePayroll
 }
 
 type CompanyTaxInfo {
   id: ID!
   ein: String!
 }
-"""
-Employee address type
-"""
+
 type Address {
   streetLine1: String
   streetLine2: String
@@ -103,23 +161,31 @@ type Address {
 }
 
 type Mutation {
+  """
+  To be called by Truework to request employee consent to share their payroll/employment info for
+  loan approval purpose
+  """
   requestEmployeeConsentByThirdParty(employeeId: ID!): ConsentState!
 }
 
-"""
-Defines possible states of employee or company sharing their sensitive info 
-"""
 enum ConsentState {
   """
-  Truework request is pending, waiting for an employee response or autoapproval
+  Initial state, Truework can move it to PENDING by calling requestEmployeeConsentByThirdParty
+  """
+  ASK
+
+  """
+  Either will get autoapproved after 12 hours to APPROVED, or manually changed by the employee to APPROVED or DENIED
   """
   PENDING
+
   """
-  Sensitive data can be shared with partners
-  """  
-  GRANTED
+  Employment info will be shared with Truework
   """
-  Employee declined a request to share their sensitive info
+  APPROVED
+
+  """
+  Employment info WILL NOT be shared with Truework
   """
   DENIED
 }
@@ -137,15 +203,12 @@ type PayrollCompensation {
 }
 
 type Paystub {
-  payDate: Date
   payPeriodStartDate: Date
   payPeriodEndDate: Date
-  grossEarnings: Decimal
-  netEarnings: Decimal
-  baseAmount: Decimal
-  bonusAmount: Decimal
-  overtimeAmount: Decimal
-  commissionAmount: Decimal
-  otherAmount: Decimal
+  gross: Decimal
+  bonus: Decimal
+  overtime: Decimal
+  commission: Decimal
+  other: Decimal
   payPeriodHours: Decimal
 }

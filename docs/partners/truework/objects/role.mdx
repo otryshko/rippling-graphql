@@ -3,13 +3,14 @@ id: role
 title: Role
 ---
 
-Role with the company
+Role of a person at the company
 
 ```graphql
 type Role implements Node {
   id: ID!
-  company: Company!
+  company: Company
   employee: Employee
+  payroll: RolePayroll
 }
 ```
 
@@ -17,9 +18,15 @@ type Role implements Node {
 
 #### `id` ([`ID!`](/docs/partners/truework/scalars/id))
 
-#### `company` ([`Company!`](/docs/partners/truework/objects/company))
+#### `company` ([`Company`](/docs/partners/truework/objects/company))
+
+Employed at this company
 
 #### `employee` ([`Employee`](/docs/partners/truework/objects/employee))
+
+#### `payroll` ([`RolePayroll`](/docs/partners/truework/objects/role-payroll))
+
+Payroll info related to this company and this employee
 
 ### Interfaces
 

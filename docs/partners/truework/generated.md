@@ -15,16 +15,12 @@ Truework calls [`employeeBySsn`](/docs/partners/truework/queries/employee-by-ssn
 
 ```
 query{
-  employeeBySsn(ssn: "238729188"){
+  employeeBySsn(ssn: "238-72-5505"){
     id
     ssn
-    consent{
-      state
-    }
     fullName
     firstName
     lastName
-    dob
     email
     phone
     homeAddress{
@@ -35,37 +31,45 @@ query{
       state
       country
     }
-    payroll{
-      last3Years{
-        year,
-        compensation{
+    consent{
+      state
+      pendingStartedAt
+    }
+    dob
+    roles{
+      payroll{
+        last3Years{
+          year
+          compensation{
+            gross
+            net
+            base
+            bonus
+            commission
+            overtime
+            other
+          }
+        }
+        paystubs{
+          payPeriodStartDate
+          payPeriodEndDate
           gross
-          net
-          base
           bonus
-          commission
           overtime
+          commission
           other
+          payPeriodHours
         }
       }
-      paystubs{
-        payDate
-        payPeriodStartDate
-        payPeriodEndDate
-        grossEarnings
-        netEarnings
-        baseAmount
-        bonusAmount
-        overtimeAmount
-        commissionAmount
-        otherAmount
-        payPeriodHours
-        
-      }
-    }
-    roles{
       company{
-        name
+        address{
+          streetLine1
+          streetLine2
+          zip
+          city
+          state
+          country
+        }
       }
     }
   }
