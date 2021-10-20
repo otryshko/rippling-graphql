@@ -15,7 +15,7 @@ Truework calls [`employeeBySsn`](/docs/partners/truework/queries/employee-by-ssn
 
 ```
 query{
-  employeeBySsn(ssn: "238-72-5505"){
+  employeeBySsn(ssn: "238729188"){
     id
     ssn
     fullName
@@ -37,6 +37,16 @@ query{
     }
     dob
     roles{
+      startDate
+      endDate
+      state
+      job{
+        employmentType
+        exemptionType
+        title
+        salaryUnit
+        salaryPerUnit
+      }
       payroll{
         last3Years{
           year
@@ -62,6 +72,12 @@ query{
         }
       }
       company{
+        id
+        name
+        status
+        taxInfos{
+          ein
+        }
         address{
           streetLine1
           streetLine2
