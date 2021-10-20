@@ -3,7 +3,7 @@ id: role
 title: Role
 ---
 
-Role of a person at the company
+Employment position
 
 ```graphql
 type Role implements Node {
@@ -11,6 +11,10 @@ type Role implements Node {
   company: Company
   employee: Employee
   payroll: RolePayroll
+  startDate: Date
+  endDate: Date
+  state: RoleState
+  job: Job
 }
 ```
 
@@ -20,13 +24,25 @@ type Role implements Node {
 
 #### `company` ([`Company`](/docs/partners/truework/objects/company))
 
-Employed at this company
+Employment at this company
 
 #### `employee` ([`Employee`](/docs/partners/truework/objects/employee))
 
 #### `payroll` ([`RolePayroll`](/docs/partners/truework/objects/role-payroll))
 
 Payroll info related to this company and this employee
+
+#### `startDate` ([`Date`](/docs/partners/truework/scalars/date))
+
+#### `endDate` ([`Date`](/docs/partners/truework/scalars/date))
+
+#### `state` ([`RoleState`](/docs/partners/truework/enums/role-state))
+
+Is employee still active, see RoleState enum for reference
+
+#### `job` ([`Job`](/docs/partners/truework/objects/job))
+
+Job held in this role
 
 ### Interfaces
 

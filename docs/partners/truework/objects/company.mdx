@@ -10,9 +10,7 @@ type Company {
   id: ID!
   name: String
   taxInfos: [CompanyTaxInfo!]!
-  workEmailDomain: String
   status: CompanyStatus
-  consent: ConsentState
   address: Address
 }
 ```
@@ -31,13 +29,7 @@ Public company name
 
 A list of Employer Identification Numbers registered by the company
 
-#### `workEmailDomain` ([`String`](/docs/partners/truework/scalars/string))
-
 #### `status` ([`CompanyStatus`](/docs/partners/truework/enums/company-status))
-
-#### `consent` ([`ConsentState`](/docs/partners/truework/enums/consent-state))
-
-if DENIED, company info will not be exposed to Truework
 
 #### `address` ([`Address`](/docs/partners/truework/objects/address))
 

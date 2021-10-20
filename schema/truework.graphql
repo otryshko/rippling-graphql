@@ -31,13 +31,7 @@ type Company {
   A list of Employer Identification Numbers registered by the company
   """
   taxInfos: [CompanyTaxInfo!]!
-  workEmailDomain: String
   status: CompanyStatus
-
-  """
-  if DENIED, company info will not be exposed to Truework
-  """
-  consent: ConsentState
 
   """
   Company work address
@@ -60,9 +54,6 @@ enum EmploymentType {
   TEMP
 }
 
-"""
-Employee, representing a physical person
-"""
 type Employee implements Node {
   """
   Relay-compable employee id
@@ -129,13 +120,13 @@ type EmployeeConsent {
 }
 
 """
-Role of a person at the company
+Employment position
 """
 type Role implements Node {
   id: ID!
 
   """
-  Employed at this company
+  Employment at this company
   """
   company: Company
   employee: Employee
@@ -144,6 +135,74 @@ type Role implements Node {
   Payroll info related to this company and this employee
   """
   payroll: RolePayroll
+  startDate: Date
+  endDate: Date
+
+  """
+  Is employee still active, see RoleState enum for reference
+  """
+  state: RoleState
+
+  """
+  Job held in this role
+  """
+  job: Job
+}
+
+enum RoleState {
+  """
+  Need more information from the admin to add this employee to the company.
+  """
+  INIT
+
+  """
+  Admin has entered all the required details for an employee to be added to the company/offer sent.
+  """
+  HIRED
+
+  """
+  Employee has accepted the offer but start date is in future
+  """
+  ACCEPTED
+
+  """
+  Employee's start date is in the past and offer has been sent or accepted.
+  """
+  ACTIVE
+  TERMINATED
+}
+
+"""Employee's job definition"""
+type Job {
+  """
+  is full time/contractor/etc
+  """
+  employmentType: EmploymentType
+  exemptionType: ExemptionType
+
+  """Job title"""
+  title: String
+  salaryUnit: JobSalaryUnit
+  salaryPerUnit: Decimal
+}
+
+enum JobSalaryUnit {
+  HOUR
+  DAY
+  WEEK
+  MONTH
+  YEAR
+  PAY_PERIOD
+}
+
+enum ExemptionType {
+  PROFESSIONAL_EMPLOYEE
+  EXECUTIVE_EMPLOYEE
+  ADMINISTRATIVE_EMPLOYEE
+  COMPUTER_SOFTWARE_EMPLOYEE
+  COMMISSIONED_SALESPERSON_EMPLOYEE
+  NON_EXEMPT
+  NOT_AVAILABLE
 }
 
 type CompanyTaxInfo {
@@ -161,32 +220,22 @@ type Address {
 }
 
 type Mutation {
-  """
-  To be called by Truework to request employee consent to share their payroll/employment info for
-  loan approval purpose
-  """
+  """To be called by Truework to request employee consent to share their payroll/employment info for
+  loan approval purpose"""
   requestEmployeeConsentByThirdParty(employeeId: ID!): ConsentState!
 }
 
 enum ConsentState {
-  """
-  Initial state, Truework can move it to PENDING by calling requestEmployeeConsentByThirdParty
-  """
+  """Initial state, Truework can move it to PENDING by calling requestEmployeeConsentByThirdParty"""
   ASK
 
-  """
-  Either will get autoapproved after 12 hours to APPROVED, or manually changed by the employee to APPROVED or DENIED
-  """
+  """Not yet appoved - either will get autoapproved after 12 hours to APPROVED, or manually changed by the employee to APPROVED or DENIED"""
   PENDING
 
-  """
-  Employment info will be shared with Truework
-  """
+  """Employment info will be shared with Truework"""
   APPROVED
 
-  """
-  Employment info WILL NOT be shared with Truework
-  """
+  """Employment info WILL NOT be shared with Truework"""
   DENIED
 }
 
