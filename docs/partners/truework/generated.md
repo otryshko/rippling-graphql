@@ -125,7 +125,7 @@ To initiate data sharing, Truework should call
 [`requestEmployeeConsentByThirdParty`](/docs/partners/truework/mutations/request-employee-consent-by-third-party) mutation passing employee ID obtained from `employeeBySsn` call. It will change employee's consent to `PENDING`.
 ```
 mutation {
-  requestEmployeeConsentByThirdParty(employeeId: "RW1wbG95ZWU6NTgzZmQ4OTZlMTVkN2Q5OTI3YTcwNDdl")
+  requestEmployeeConsentByThirdParty(employeeId: "RW1wbG95ZWU6NTgzZmQ4OTZlMTVkN2Q5OTI3YTcwNDdl", requestorName: "Loan provider company")
 }
 ```
 
