@@ -6,8 +6,9 @@ title: Role
 Employment position
 
 ```graphql
-type Role implements Node {
+type Role implements NotifySubject, Node {
   id: ID!
+  mongoId: ID!
   company: Company
   employee: Employee
   payroll: RolePayroll
@@ -21,6 +22,10 @@ type Role implements Node {
 ### Fields
 
 #### `id` ([`ID!`](/docs/partners/truework/scalars/id))
+
+relay id
+
+#### `mongoId` ([`ID!`](/docs/partners/truework/scalars/id))
 
 #### `company` ([`Company`](/docs/partners/truework/objects/company))
 
@@ -45,5 +50,7 @@ Is employee still active, see RoleState enum for reference
 Job held in this role
 
 ### Interfaces
+
+#### [`NotifySubject`](/docs/partners/truework/interfaces/notify-subject)
 
 #### [`Node`](/docs/partners/truework/interfaces/node)

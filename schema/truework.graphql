@@ -1,12 +1,16 @@
 type Query {
-  """
-  Truework: return information about an employee for loan validation
-  """
-  employeeBySsn(ssn: String!): Employee
+  """Truework: return information about an employee for loan validation
+  An array might contain multiple records, but with the same SSN"""
+  employeesBySsn(ssn: String!): [Employee]
 }
 
 interface Node {
   id: ID!
+}
+
+interface NotifySubject {
+  id: ID!
+  mongoId: ID!
 }
 
 type PageInfo {
@@ -16,26 +20,19 @@ type PageInfo {
   endCursor: String
 }
 
-type Company {
-  """
-  Relay-compable company id
-  """
+"""Client company representation"""
+type Company implements NotifySubject & Node {
+  """relay id"""
   id: ID!
 
-  """
-  Public company name
-  """
+  """Public company name"""
   name: String
 
-  """
-  A list of Employer Identification Numbers registered by the company
-  """
+  """A list of Employer Identification Numbers registered by the company"""
   taxInfos: [CompanyTaxInfo!]!
   status: CompanyStatus
 
-  """
-  Company work address
-  """
+  """Company work address"""
   address: Address
 }
 
@@ -54,57 +51,51 @@ enum EmploymentType {
   TEMP
 }
 
-type Employee implements Node {
-  """
-  Relay-compable employee id
-  """
-  id: ID!
+"""Employee record, logically matches a person"""
 
-  """
-  Goverment ID of the person
-  """
+type Employee implements NotifySubject & Node {
+  """relay id"""
+  id: ID!
+  mongoId: ID!
+
+  """Goverment ID of the person"""
   ssn: String
   fullName: String
   firstName: String
   lastName: String
 
-  """
-  Date of birth
-  """
+  """Date of birth"""
   dob: String
   email: String
   phone: String
   homeAddress: Address
 
-  """
-  An array of employment positions
-  """
+  """An array of employment positions"""
   roles: [Role!]
 
-  """
-  Has an employee consented to share employment history with Truework
-  """
+  """Has an employee consented to share employment history with Truework"""
   consent: EmployeeConsent
+
+  """List of companies and roles employee is/was employed at"""
+  employmentHistory: [EmploymentHistoryRecord]
 }
 
-"""
-Payroll-related section of a role
-"""
+"""List of companies and roles employee is/was employed at"""
+type EmploymentHistoryRecord {
+  company: Company
+  roles: [Role]
+}
+
+"""Payroll-related section of a role"""
 type RolePayroll {
-  """
-  Yearly compensation for the last 3 years
-  """
+  """Yearly compensation for the last 3 years"""
   last3Years: [YearlyCompensation]
 
-  """
-  Paystubs for the year-to-date
-  """
+  """Paystubs for the year-to-date"""
   paystubs: [Paystub]
 }
 
-"""
-Yearly compensation
-"""
+"""Yearly compensation"""
 type YearlyCompensation {
   year: Int!
   compensation: PayrollCompensation
@@ -114,76 +105,75 @@ scalar DateTime
 
 scalar Date
 
+"""State of employee consent to share information with Truework"""
 type EmployeeConsent {
+  """state - see type definition for value"""
   state: ConsentState
+
+  """Used for autoapproval (+12 hours after the pending request)"""
   pendingStartedAt: DateTime
+  allowCode: String
+  denyCode: String
 }
 
-"""
-Employment position
-"""
-type Role implements Node {
+"""Employment position"""
+type Role implements NotifySubject & Node {
+  """relay id"""
   id: ID!
+  mongoId: ID!
 
-  """
-  Employment at this company
-  """
+  """Employment at this company"""
   company: Company
   employee: Employee
 
-  """
-  Payroll info related to this company and this employee
-  """
+  """Payroll info related to this company and this employee"""
   payroll: RolePayroll
   startDate: Date
   endDate: Date
 
-  """
-  Is employee still active, see RoleState enum for reference
-  """
+  """Is employee still active, see RoleState enum for reference"""
   state: RoleState
 
-  """
-  Job held in this role
-  """
+  """Job held in this role"""
   job: Job
 }
 
 enum RoleState {
-  """
-  Need more information from the admin to add this employee to the company.
-  """
+  """Need more information from the admin to add this employee to the company."""
   INIT
 
-  """
-  Admin has entered all the required details for an employee to be added to the company/offer sent.
-  """
+  """Admin has entered all the required details for an employee to be added to the company/offer sent."""
   HIRED
 
-  """
-  Employee has accepted the offer but start date is in future
-  """
+  """Employee has accepted the offer but start date is in future"""
   ACCEPTED
 
-  """
-  Employee's start date is in the past and offer has been sent or accepted.
-  """
+  """Employee's start date is in the past and offer has been sent or accepted."""
   ACTIVE
+
+  """Employee's role has been terminated"""
   TERMINATED
 }
 
 """Employee's job definition"""
 type Job {
-  """
-  is full time/contractor/etc
-  """
-  employmentType: EmploymentType
+  """is full time/contractor/etc"""
+  employmentType: CompanyEmploymentType
   exemptionType: ExemptionType
 
   """Job title"""
   title: String
   salaryUnit: JobSalaryUnit
   salaryPerUnit: Decimal
+}
+
+type CompanyEmploymentType {
+  isSalaried: Boolean
+  isHourly: Boolean
+  isTemporary: Boolean
+  isPartTime: Boolean
+  isFullTime: Boolean
+  isContractor: Boolean
 }
 
 enum JobSalaryUnit {
@@ -219,10 +209,21 @@ type Address {
   country: String
 }
 
+"""describes a group of roles"""
+type Group implements NotifySubject & Node {
+  """relay id"""
+  id: ID!
+
+  """internal db id"""
+  mongoId: ID!
+}
+
 type Mutation {
-  """To be called by Truework to request employee consent to share their payroll/employment info for
-  loan approval purpose"""
-  requestEmployeeConsentByThirdParty(employeeId: ID!): ConsentState!
+  """To be called by Truework to request employee consent to share their payroll/employment info for loan approval purpose"""
+  requestEmployeeConsentByThirdParty(
+    employeeId: ID!
+    requestorName: String
+  ): ConsentState!
 }
 
 enum ConsentState {
@@ -237,6 +238,39 @@ enum ConsentState {
 
   """Employment info WILL NOT be shared with Truework"""
   DENIED
+}
+
+"""The payload sent to webhook"""
+type NotifyPayload {
+  """type of the object the notification is about, only Employee is supported at the moment"""
+  instanceType: String!
+
+  """The object the notification is about"""
+  instance: NotifySubject!
+
+  """what has happened to that object"""
+  action: NotifyAction
+
+  """free-formed string with more details about notification action"""
+  subAction: String
+}
+
+"""notification types"""
+enum NotifyAction {
+  """object was created"""
+  CREATED
+
+  """object was deleted"""
+  DELETED
+
+  """object was updated"""
+  UPDATED
+
+  """for role - role was hired"""
+  HIRED
+
+  """specific to role - role was terminated"""
+  TERMINATED
 }
 
 scalar Decimal

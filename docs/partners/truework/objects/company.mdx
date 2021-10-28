@@ -3,10 +3,10 @@ id: company
 title: Company
 ---
 
-No description
+Client company representation
 
 ```graphql
-type Company {
+type Company implements NotifySubject, Node {
   id: ID!
   name: String
   taxInfos: [CompanyTaxInfo!]!
@@ -19,7 +19,7 @@ type Company {
 
 #### `id` ([`ID!`](/docs/partners/truework/scalars/id))
 
-Relay-compable company id
+relay id
 
 #### `name` ([`String`](/docs/partners/truework/scalars/string))
 
@@ -34,3 +34,9 @@ A list of Employer Identification Numbers registered by the company
 #### `address` ([`Address`](/docs/partners/truework/objects/address))
 
 Company work address
+
+### Interfaces
+
+#### [`NotifySubject`](/docs/partners/truework/interfaces/notify-subject)
+
+#### [`Node`](/docs/partners/truework/interfaces/node)

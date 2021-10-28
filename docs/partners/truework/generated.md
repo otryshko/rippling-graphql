@@ -1,6 +1,6 @@
 ---
 id: schema
-slug: /partners/truework
+slug: /partners/truework/flows
 title: Flows
 sidebar_position: 1
 ---
@@ -11,11 +11,11 @@ sidebar_position: 1
 
 Sandbox graphql playground is available at https://sandbox.rippling.com/api/apps/external/truework/graphql. For authentication, see [Authentication in playground](../intro#authentication-in-playground)
 
-Truework calls [`employeeBySsn`](/docs/partners/truework/queries/employee-by-ssn) passing in the SSN and the fields it is interested in.
+Truework calls [`employeesBySsn`](/docs/partners/truework/queries/employees-by-ssn) passing in the SSN and the fields it is interested in. The function will return an array of employees with matching SSN (single person will have multiple employee records if they register with different personal email addresses)
 
 ```
 query{
-  employeeBySsn(ssn: "238729188"){
+  employeesBySsn(ssn: "238-72-5505"){
     id
     ssn
     fullName
@@ -23,6 +23,14 @@ query{
     lastName
     email
     phone
+    employmentHistory{
+      company{
+        ...companyFields
+      }
+      roles{
+        ...roleFields
+      }
+    }
     homeAddress{
       streetLine1
       streetLine2
@@ -37,56 +45,64 @@ query{
     }
     dob
     roles{
-      startDate
-      endDate
-      state
-      job{
-        employmentType
-        exemptionType
-        title
-        salaryUnit
-        salaryPerUnit
-      }
-      payroll{
-        last3Years{
-          year
-          compensation{
-            gross
-            net
-            base
-            bonus
-            commission
-            overtime
-            other
-          }
-        }
-        paystubs{
-          payPeriodStartDate
-          payPeriodEndDate
-          gross
-          bonus
-          overtime
-          commission
-          other
-          payPeriodHours
-        }
-      }
+      ...roleFields
       company{
-        id
-        name
-        status
-        taxInfos{
-          ein
-        }
-        address{
-          streetLine1
-          streetLine2
-          zip
-          city
-          state
-          country
-        }
+        ...companyFields
       }
+    }
+  }
+}
+fragment companyFields on Company {
+  id
+  name
+  status
+  taxInfos{
+    ein
+  }
+  address{
+  	streetLine1
+  	streetLine2
+  	zip
+  	city
+  	state
+  	country
+  }
+}
+fragment roleFields on Role {
+  startDate
+  endDate
+  state
+  job{
+    employmentType{
+      isSalaried
+    }
+  	exemptionType
+    title
+    salaryUnit
+    salaryPerUnit
+  }
+  payroll{
+    last3Years{
+      year
+      compensation{
+        gross
+        net
+        base
+        bonus
+        commission
+        overtime
+        other
+      }
+    }
+    paystubs{
+      payPeriodStartDate
+      payPeriodEndDate
+      gross
+      bonus
+      overtime
+      commission
+      other
+      payPeriodHours
     }
   }
 }
@@ -95,7 +111,7 @@ query{
 
 If API responds with ```{
   "data": {
-    "employeeBySsn": null
+    "employeeBySsn": []
   }
 }``` it means the employee is not registered with Rippling.
 

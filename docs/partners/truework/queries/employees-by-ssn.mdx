@@ -1,14 +1,15 @@
 ---
-id: employee-by-ssn
-title: employeeBySsn
+id: employees-by-ssn
+title: employeesBySsn
 ---
 
 Truework: return information about an employee for loan validation
+An array might contain multiple records, but with the same SSN
 
 ```graphql
-employeeBySsn(
+employeesBySsn(
   ssn: String!
-): Employee
+): [Employee]
 
 ```
 
@@ -19,3 +20,5 @@ employeeBySsn(
 ### Type
 
 #### [`Employee`](/docs/partners/truework/objects/employee)
+
+Employee record, logically matches a person
