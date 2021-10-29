@@ -8,7 +8,7 @@ Employee record, logically matches a person
 ```graphql
 type Employee implements NotifySubject, Node {
   id: ID!
-  mongoId: ID!
+  dbId: String
   ssn: String
   fullName: String
   firstName: String
@@ -27,9 +27,9 @@ type Employee implements NotifySubject, Node {
 
 #### `id` ([`ID!`](/docs/partners/truework/scalars/id))
 
-relay id
+Relay employee id
 
-#### `mongoId` ([`ID!`](/docs/partners/truework/scalars/id))
+#### `dbId` ([`String`](/docs/partners/truework/scalars/string))
 
 #### `ssn` ([`String`](/docs/partners/truework/scalars/string))
 

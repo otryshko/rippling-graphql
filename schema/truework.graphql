@@ -10,7 +10,7 @@ interface Node {
 
 interface NotifySubject {
   id: ID!
-  mongoId: ID!
+  dbId: String
 }
 
 type PageInfo {
@@ -22,7 +22,7 @@ type PageInfo {
 
 """Client company representation"""
 type Company implements NotifySubject & Node {
-  """relay id"""
+  """Relay company id"""
   id: ID!
 
   """Public company name"""
@@ -32,8 +32,13 @@ type Company implements NotifySubject & Node {
   taxInfos: [CompanyTaxInfo!]!
   status: CompanyStatus
 
+  """if DENIED, company info will not be exposed to Truework"""
+  consent: ConsentState
+
   """Company work address"""
   address: Address
+  hasHris: Boolean
+  hasPayroll: Boolean
 }
 
 enum CompanyStatus {
@@ -52,11 +57,10 @@ enum EmploymentType {
 }
 
 """Employee record, logically matches a person"""
-
 type Employee implements NotifySubject & Node {
-  """relay id"""
+  """Relay employee id"""
   id: ID!
-  mongoId: ID!
+  dbId: String
 
   """Goverment ID of the person"""
   ssn: String
@@ -118,9 +122,9 @@ type EmployeeConsent {
 
 """Employment position"""
 type Role implements NotifySubject & Node {
-  """relay id"""
+  """Relay role id"""
   id: ID!
-  mongoId: ID!
+  dbId: String
 
   """Employment at this company"""
   company: Company
@@ -211,15 +215,16 @@ type Address {
 
 """describes a group of roles"""
 type Group implements NotifySubject & Node {
-  """relay id"""
+  """relay group id"""
   id: ID!
 
   """internal db id"""
-  mongoId: ID!
+  dbId: String
 }
 
 type Mutation {
-  """To be called by Truework to request employee consent to share their payroll/employment info for loan approval purpose"""
+  """To be called by Truework to request employee consent to share their payroll/employment info for
+  loan approval purpose"""
   requestEmployeeConsentByThirdParty(
     employeeId: ID!
     requestorName: String

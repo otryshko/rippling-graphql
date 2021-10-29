@@ -8,7 +8,7 @@ describes a group of roles
 ```graphql
 type Group implements NotifySubject, Node {
   id: ID!
-  mongoId: ID!
+  dbId: String
 }
 ```
 
@@ -16,9 +16,9 @@ type Group implements NotifySubject, Node {
 
 #### `id` ([`ID!`](/docs/partners/truework/scalars/id))
 
-relay id
+relay group id
 
-#### `mongoId` ([`ID!`](/docs/partners/truework/scalars/id))
+#### `dbId` ([`String`](/docs/partners/truework/scalars/string))
 
 internal db id
 

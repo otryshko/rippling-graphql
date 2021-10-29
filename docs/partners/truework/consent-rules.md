@@ -11,7 +11,7 @@ Both an employee or client can choose to participate in Truework integration or 
 
 ## Company consent
 
-If company declined to participate, none of the company info will be present in the employment history. The list of roles with the company will be excluded from the employee list of roles as well.
+If company declined to participate, a placeholder company object with id='`Q29tcGFueTowMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDA=`' and name='`NoConsentCompany`' will be returned instead. The list of roles with the company will be excluded from the employee list of roles as well.
 
 ## Employee consent
 
