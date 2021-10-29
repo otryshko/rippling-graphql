@@ -10,7 +10,7 @@ sidebar_position: 4
 
 ## 2021-10-29
 
-1. Added [`hasHris`](/docs/partners/truework/objects/company#hashris-boolean) and [`hasPayroll`](/docs/partners/truework/objects/company#haspayroll-boolean) properties to [`Company`]((/docs/partners/truework/objects/company))
+1. Added [`hasHris`](/docs/partners/truework/objects/company#hashris-boolean) and [`hasPayroll`](/docs/partners/truework/objects/company#haspayroll-boolean) properties to [`Company`](/docs/partners/truework/objects/company)
 2. If company has not consented, it will be represented by a placeholder company object with id='Q29tcGFueTowMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDA=' and name='NoConsentCompany'. Updated Consent Rules page to reflect it.
 
 ## 2021-10-28
