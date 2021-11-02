@@ -10,7 +10,7 @@ sidebar_position: 4
 
 ## 2021-10-29
 
-1. Added [`hasHris`](https://developer.rippling.com/docs/rippling-graphql/docs/partners/truework/objects/company.md#hashris-boolean) and [`hasPayroll`](https://developer.rippling.com/docs/rippling-graphql/docs/partners/truework/objects/company.md#haspayroll-boolean) properties to [`Company`](https://developer.rippling.com/docs/rippling-graphql/docs/partners/truework/objects/company.md)
+1. Added [`hasHris`](docs/partners/truework/objects/company.md#hashris-boolean) and [`hasPayroll`](https://developer.rippling.com/docs/rippling-graphql/docs/partners/truework/objects/company.md#haspayroll-boolean) properties to [`Company`](https://developer.rippling.com/docs/rippling-graphql/docs/partners/truework/objects/company.md)
 2. If company has not consented, it will be represented by a placeholder company object with id='Q29tcGFueTowMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDA=' and name='NoConsentCompany'. Updated Consent Rules page to reflect it.
 
 ## 2021-10-28
