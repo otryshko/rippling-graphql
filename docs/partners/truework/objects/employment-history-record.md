@@ -14,6 +14,6 @@ type EmploymentHistoryRecord {
 
 ### Fields
 
-#### `company` ([`Company`](/docs/partners/truework/objects/company))
+#### `company` ([`Company`](https://developer.rippling.com/docs/rippling-graphql/docs/partners/truework/objects/company.md))
 
-#### `roles` ([`[Role]`](/docs/partners/truework/objects/role))
+#### `roles` ([`[Role]`](https://developer.rippling.com/docs/rippling-graphql/docs/partners/truework/objects/role.md))

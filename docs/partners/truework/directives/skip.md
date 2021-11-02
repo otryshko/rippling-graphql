@@ -13,6 +13,6 @@ directive @skip(
 
 ### Arguments
 
-#### `if` ([`Boolean!`](/docs/partners/truework/scalars/boolean))
+#### `if` ([`Boolean!`](https://developer.rippling.com/docs/rippling-graphql/docs/partners/truework/scalars/boolean.md))
 
 Skipped when true.

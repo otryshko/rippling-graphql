@@ -16,18 +16,18 @@ type NotifyPayload {
 
 ### Fields
 
-#### `instanceType` ([`String!`](/docs/partners/truework/scalars/string))
+#### `instanceType` ([`String!`](https://developer.rippling.com/docs/rippling-graphql/docs/partners/truework/scalars/string.md))
 
 type of the object the notification is about, only Employee is supported at the moment
 
-#### `instance` ([`NotifySubject!`](/docs/partners/truework/interfaces/notify-subject))
+#### `instance` ([`NotifySubject!`](https://developer.rippling.com/docs/rippling-graphql/docs/partners/truework/interfaces/notify-subject.md))
 
 The object the notification is about
 
-#### `action` ([`NotifyAction`](/docs/partners/truework/enums/notify-action))
+#### `action` ([`NotifyAction`](https://developer.rippling.com/docs/rippling-graphql/docs/partners/truework/enums/notify-action.md))
 
 what has happened to that object
 
-#### `subAction` ([`String`](/docs/partners/truework/scalars/string))
+#### `subAction` ([`String`](https://developer.rippling.com/docs/rippling-graphql/docs/partners/truework/scalars/string.md))
 
 free-formed string with more details about notification action

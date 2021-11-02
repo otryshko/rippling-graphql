@@ -18,14 +18,14 @@ type CompanyEmploymentType {
 
 ### Fields
 
-#### `isSalaried` ([`Boolean`](/docs/partners/truework/scalars/boolean))
+#### `isSalaried` ([`Boolean`](https://developer.rippling.com/docs/rippling-graphql/docs/partners/truework/scalars/boolean.md))
 
-#### `isHourly` ([`Boolean`](/docs/partners/truework/scalars/boolean))
+#### `isHourly` ([`Boolean`](https://developer.rippling.com/docs/rippling-graphql/docs/partners/truework/scalars/boolean.md))
 
-#### `isTemporary` ([`Boolean`](/docs/partners/truework/scalars/boolean))
+#### `isTemporary` ([`Boolean`](https://developer.rippling.com/docs/rippling-graphql/docs/partners/truework/scalars/boolean.md))
 
-#### `isPartTime` ([`Boolean`](/docs/partners/truework/scalars/boolean))
+#### `isPartTime` ([`Boolean`](https://developer.rippling.com/docs/rippling-graphql/docs/partners/truework/scalars/boolean.md))
 
-#### `isFullTime` ([`Boolean`](/docs/partners/truework/scalars/boolean))
+#### `isFullTime` ([`Boolean`](https://developer.rippling.com/docs/rippling-graphql/docs/partners/truework/scalars/boolean.md))
 
-#### `isContractor` ([`Boolean`](/docs/partners/truework/scalars/boolean))
+#### `isContractor` ([`Boolean`](https://developer.rippling.com/docs/rippling-graphql/docs/partners/truework/scalars/boolean.md))

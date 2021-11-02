@@ -14,6 +14,6 @@ type CompanyTaxInfo {
 
 ### Fields
 
-#### `id` ([`ID!`](/docs/partners/truework/scalars/id))
+#### `id` ([`ID!`](https://developer.rippling.com/docs/rippling-graphql/docs/partners/truework/scalars/id.md))
 
-#### `ein` ([`String!`](/docs/partners/truework/scalars/string))
+#### `ein` ([`String!`](https://developer.rippling.com/docs/rippling-graphql/docs/partners/truework/scalars/string.md))

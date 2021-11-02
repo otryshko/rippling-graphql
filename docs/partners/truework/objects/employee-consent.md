@@ -16,14 +16,14 @@ type EmployeeConsent {
 
 ### Fields
 
-#### `state` ([`ConsentState`](/docs/partners/truework/enums/consent-state))
+#### `state` ([`ConsentState`](https://developer.rippling.com/docs/rippling-graphql/docs/partners/truework/enums/consent-state.md))
 
 state - see type definition for value
 
-#### `pendingStartedAt` ([`DateTime`](/docs/partners/truework/scalars/date-time))
+#### `pendingStartedAt` ([`DateTime`](https://developer.rippling.com/docs/rippling-graphql/docs/partners/truework/scalars/date-time.md))
 
 Used for autoapproval (+12 hours after the pending request)
 
-#### `allowCode` ([`String`](/docs/partners/truework/scalars/string))
+#### `allowCode` ([`String`](https://developer.rippling.com/docs/rippling-graphql/docs/partners/truework/scalars/string.md))
 
-#### `denyCode` ([`String`](/docs/partners/truework/scalars/string))
+#### `denyCode` ([`String`](https://developer.rippling.com/docs/rippling-graphql/docs/partners/truework/scalars/string.md))

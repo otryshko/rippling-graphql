@@ -17,16 +17,16 @@ type Job {
 
 ### Fields
 
-#### `employmentType` ([`CompanyEmploymentType`](/docs/partners/truework/objects/company-employment-type))
+#### `employmentType` ([`CompanyEmploymentType`](https://developer.rippling.com/docs/rippling-graphql/docs/partners/truework/objects/company-employment-type.md))
 
 is full time/contractor/etc
 
-#### `exemptionType` ([`ExemptionType`](/docs/partners/truework/enums/exemption-type))
+#### `exemptionType` ([`ExemptionType`](https://developer.rippling.com/docs/rippling-graphql/docs/partners/truework/enums/exemption-type.md))
 
-#### `title` ([`String`](/docs/partners/truework/scalars/string))
+#### `title` ([`String`](https://developer.rippling.com/docs/rippling-graphql/docs/partners/truework/scalars/string.md))
 
 Job title
 
-#### `salaryUnit` ([`JobSalaryUnit`](/docs/partners/truework/enums/job-salary-unit))
+#### `salaryUnit` ([`JobSalaryUnit`](https://developer.rippling.com/docs/rippling-graphql/docs/partners/truework/enums/job-salary-unit.md))
 
-#### `salaryPerUnit` ([`Decimal`](/docs/partners/truework/scalars/decimal))
+#### `salaryPerUnit` ([`Decimal`](https://developer.rippling.com/docs/rippling-graphql/docs/partners/truework/scalars/decimal.md))

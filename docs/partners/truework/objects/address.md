@@ -18,14 +18,14 @@ type Address {
 
 ### Fields
 
-#### `streetLine1` ([`String`](/docs/partners/truework/scalars/string))
+#### `streetLine1` ([`String`](https://developer.rippling.com/docs/rippling-graphql/docs/partners/truework/scalars/string.md))
 
-#### `streetLine2` ([`String`](/docs/partners/truework/scalars/string))
+#### `streetLine2` ([`String`](https://developer.rippling.com/docs/rippling-graphql/docs/partners/truework/scalars/string.md))
 
-#### `zip` ([`String`](/docs/partners/truework/scalars/string))
+#### `zip` ([`String`](https://developer.rippling.com/docs/rippling-graphql/docs/partners/truework/scalars/string.md))
 
-#### `city` ([`String`](/docs/partners/truework/scalars/string))
+#### `city` ([`String`](https://developer.rippling.com/docs/rippling-graphql/docs/partners/truework/scalars/string.md))
 
-#### `state` ([`String`](/docs/partners/truework/scalars/string))
+#### `state` ([`String`](https://developer.rippling.com/docs/rippling-graphql/docs/partners/truework/scalars/string.md))
 
-#### `country` ([`String`](/docs/partners/truework/scalars/string))
+#### `country` ([`String`](https://developer.rippling.com/docs/rippling-graphql/docs/partners/truework/scalars/string.md))

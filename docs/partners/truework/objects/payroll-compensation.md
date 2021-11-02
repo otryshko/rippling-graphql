@@ -19,16 +19,16 @@ type PayrollCompensation {
 
 ### Fields
 
-#### `gross` ([`Decimal`](/docs/partners/truework/scalars/decimal))
+#### `gross` ([`Decimal`](https://developer.rippling.com/docs/rippling-graphql/docs/partners/truework/scalars/decimal.md))
 
-#### `net` ([`Decimal`](/docs/partners/truework/scalars/decimal))
+#### `net` ([`Decimal`](https://developer.rippling.com/docs/rippling-graphql/docs/partners/truework/scalars/decimal.md))
 
-#### `base` ([`Decimal`](/docs/partners/truework/scalars/decimal))
+#### `base` ([`Decimal`](https://developer.rippling.com/docs/rippling-graphql/docs/partners/truework/scalars/decimal.md))
 
-#### `bonus` ([`Decimal`](/docs/partners/truework/scalars/decimal))
+#### `bonus` ([`Decimal`](https://developer.rippling.com/docs/rippling-graphql/docs/partners/truework/scalars/decimal.md))
 
-#### `commission` ([`Decimal`](/docs/partners/truework/scalars/decimal))
+#### `commission` ([`Decimal`](https://developer.rippling.com/docs/rippling-graphql/docs/partners/truework/scalars/decimal.md))
 
-#### `overtime` ([`Decimal`](/docs/partners/truework/scalars/decimal))
+#### `overtime` ([`Decimal`](https://developer.rippling.com/docs/rippling-graphql/docs/partners/truework/scalars/decimal.md))
 
-#### `other` ([`Decimal`](/docs/partners/truework/scalars/decimal))
+#### `other` ([`Decimal`](https://developer.rippling.com/docs/rippling-graphql/docs/partners/truework/scalars/decimal.md))

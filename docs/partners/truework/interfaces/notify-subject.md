@@ -14,6 +14,6 @@ interface NotifySubject {
 
 ### Fields
 
-#### `id` ([`ID!`](/docs/partners/truework/scalars/id))
+#### `id` ([`ID!`](https://developer.rippling.com/docs/rippling-graphql/docs/partners/truework/scalars/id.md))
 
-#### `dbId` ([`String`](/docs/partners/truework/scalars/string))
+#### `dbId` ([`String`](https://developer.rippling.com/docs/rippling-graphql/docs/partners/truework/scalars/string.md))

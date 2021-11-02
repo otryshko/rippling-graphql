@@ -16,10 +16,10 @@ type PageInfo {
 
 ### Fields
 
-#### `hasNextPage` ([`Boolean!`](/docs/partners/truework/scalars/boolean))
+#### `hasNextPage` ([`Boolean!`](https://developer.rippling.com/docs/rippling-graphql/docs/partners/truework/scalars/boolean.md))
 
-#### `hasPreviousPage` ([`Boolean!`](/docs/partners/truework/scalars/boolean))
+#### `hasPreviousPage` ([`Boolean!`](https://developer.rippling.com/docs/rippling-graphql/docs/partners/truework/scalars/boolean.md))
 
-#### `startCursor` ([`String`](/docs/partners/truework/scalars/string))
+#### `startCursor` ([`String`](https://developer.rippling.com/docs/rippling-graphql/docs/partners/truework/scalars/string.md))
 
-#### `endCursor` ([`String`](/docs/partners/truework/scalars/string))
+#### `endCursor` ([`String`](https://developer.rippling.com/docs/rippling-graphql/docs/partners/truework/scalars/string.md))

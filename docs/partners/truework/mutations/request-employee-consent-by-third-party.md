@@ -16,10 +16,10 @@ requestEmployeeConsentByThirdParty(
 
 ### Arguments
 
-#### `employeeId` ([`ID!`](/docs/partners/truework/scalars/id))
+#### `employeeId` ([`ID!`](https://developer.rippling.com/docs/rippling-graphql/docs/partners/truework/scalars/id.md))
 
-#### `requestorName` ([`String`](/docs/partners/truework/scalars/string))
+#### `requestorName` ([`String`](https://developer.rippling.com/docs/rippling-graphql/docs/partners/truework/scalars/string.md))
 
 ### Type
 
-#### [`ConsentState`](/docs/partners/truework/enums/consent-state)
+#### [`ConsentState`](https://developer.rippling.com/docs/rippling-graphql/docs/partners/truework/enums/consent-state.md)

@@ -21,36 +21,36 @@ type Role implements NotifySubject, Node {
 
 ### Fields
 
-#### `id` ([`ID!`](/docs/partners/truework/scalars/id))
+#### `id` ([`ID!`](https://developer.rippling.com/docs/rippling-graphql/docs/partners/truework/scalars/id.md))
 
 Relay role id
 
-#### `dbId` ([`String`](/docs/partners/truework/scalars/string))
+#### `dbId` ([`String`](https://developer.rippling.com/docs/rippling-graphql/docs/partners/truework/scalars/string.md))
 
-#### `company` ([`Company`](/docs/partners/truework/objects/company))
+#### `company` ([`Company`](https://developer.rippling.com/docs/rippling-graphql/docs/partners/truework/objects/company.md))
 
 Employment at this company
 
-#### `employee` ([`Employee`](/docs/partners/truework/objects/employee))
+#### `employee` ([`Employee`](https://developer.rippling.com/docs/rippling-graphql/docs/partners/truework/objects/employee.md))
 
-#### `payroll` ([`RolePayroll`](/docs/partners/truework/objects/role-payroll))
+#### `payroll` ([`RolePayroll`](https://developer.rippling.com/docs/rippling-graphql/docs/partners/truework/objects/role-payroll.md))
 
 Payroll info related to this company and this employee
 
-#### `startDate` ([`Date`](/docs/partners/truework/scalars/date))
+#### `startDate` ([`Date`](https://developer.rippling.com/docs/rippling-graphql/docs/partners/truework/scalars/date.md))
 
-#### `endDate` ([`Date`](/docs/partners/truework/scalars/date))
+#### `endDate` ([`Date`](https://developer.rippling.com/docs/rippling-graphql/docs/partners/truework/scalars/date.md))
 
-#### `state` ([`RoleState`](/docs/partners/truework/enums/role-state))
+#### `state` ([`RoleState`](https://developer.rippling.com/docs/rippling-graphql/docs/partners/truework/enums/role-state.md))
 
 Is employee still active, see RoleState enum for reference
 
-#### `job` ([`Job`](/docs/partners/truework/objects/job))
+#### `job` ([`Job`](https://developer.rippling.com/docs/rippling-graphql/docs/partners/truework/objects/job.md))
 
 Job held in this role
 
 ### Interfaces
 
-#### [`NotifySubject`](/docs/partners/truework/interfaces/notify-subject)
+#### [`NotifySubject`](https://developer.rippling.com/docs/rippling-graphql/docs/partners/truework/interfaces/notify-subject.md)
 
-#### [`Node`](/docs/partners/truework/interfaces/node)
+#### [`Node`](https://developer.rippling.com/docs/rippling-graphql/docs/partners/truework/interfaces/node.md)

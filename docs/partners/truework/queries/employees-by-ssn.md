@@ -15,10 +15,10 @@ employeesBySsn(
 
 ### Arguments
 
-#### `ssn` ([`String!`](/docs/partners/truework/scalars/string))
+#### `ssn` ([`String!`](https://developer.rippling.com/docs/rippling-graphql/docs/partners/truework/scalars/string.md))
 
 ### Type
 
-#### [`Employee`](/docs/partners/truework/objects/employee)
+#### [`Employee`](https://developer.rippling.com/docs/rippling-graphql/docs/partners/truework/objects/employee.md)
 
 Employee record, logically matches a person

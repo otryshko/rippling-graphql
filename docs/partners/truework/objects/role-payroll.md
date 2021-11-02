@@ -14,10 +14,10 @@ type RolePayroll {
 
 ### Fields
 
-#### `last3Years` ([`[YearlyCompensation]`](/docs/partners/truework/objects/yearly-compensation))
+#### `last3Years` ([`[YearlyCompensation]`](https://developer.rippling.com/docs/rippling-graphql/docs/partners/truework/objects/yearly-compensation.md))
 
 Yearly compensation for the last 3 years
 
-#### `paystubs` ([`[Paystub]`](/docs/partners/truework/objects/paystub))
+#### `paystubs` ([`[Paystub]`](https://developer.rippling.com/docs/rippling-graphql/docs/partners/truework/objects/paystub.md))
 
 Paystubs for the year-to-date

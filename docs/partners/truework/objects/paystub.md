@@ -20,18 +20,18 @@ type Paystub {
 
 ### Fields
 
-#### `payPeriodStartDate` ([`Date`](/docs/partners/truework/scalars/date))
+#### `payPeriodStartDate` ([`Date`](https://developer.rippling.com/docs/rippling-graphql/docs/partners/truework/scalars/date.md))
 
-#### `payPeriodEndDate` ([`Date`](/docs/partners/truework/scalars/date))
+#### `payPeriodEndDate` ([`Date`](https://developer.rippling.com/docs/rippling-graphql/docs/partners/truework/scalars/date.md))
 
-#### `gross` ([`Decimal`](/docs/partners/truework/scalars/decimal))
+#### `gross` ([`Decimal`](https://developer.rippling.com/docs/rippling-graphql/docs/partners/truework/scalars/decimal.md))
 
-#### `bonus` ([`Decimal`](/docs/partners/truework/scalars/decimal))
+#### `bonus` ([`Decimal`](https://developer.rippling.com/docs/rippling-graphql/docs/partners/truework/scalars/decimal.md))
 
-#### `overtime` ([`Decimal`](/docs/partners/truework/scalars/decimal))
+#### `overtime` ([`Decimal`](https://developer.rippling.com/docs/rippling-graphql/docs/partners/truework/scalars/decimal.md))
 
-#### `commission` ([`Decimal`](/docs/partners/truework/scalars/decimal))
+#### `commission` ([`Decimal`](https://developer.rippling.com/docs/rippling-graphql/docs/partners/truework/scalars/decimal.md))
 
-#### `other` ([`Decimal`](/docs/partners/truework/scalars/decimal))
+#### `other` ([`Decimal`](https://developer.rippling.com/docs/rippling-graphql/docs/partners/truework/scalars/decimal.md))
 
-#### `payPeriodHours` ([`Decimal`](/docs/partners/truework/scalars/decimal))
+#### `payPeriodHours` ([`Decimal`](https://developer.rippling.com/docs/rippling-graphql/docs/partners/truework/scalars/decimal.md))

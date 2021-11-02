@@ -14,6 +14,6 @@ type YearlyCompensation {
 
 ### Fields
 
-#### `year` ([`Int!`](/docs/partners/truework/scalars/int))
+#### `year` ([`Int!`](https://developer.rippling.com/docs/rippling-graphql/docs/partners/truework/scalars/int.md))
 
-#### `compensation` ([`PayrollCompensation`](/docs/partners/truework/objects/payroll-compensation))
+#### `compensation` ([`PayrollCompensation`](https://developer.rippling.com/docs/rippling-graphql/docs/partners/truework/objects/payroll-compensation.md))

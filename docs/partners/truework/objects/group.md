@@ -14,16 +14,16 @@ type Group implements NotifySubject, Node {
 
 ### Fields
 
-#### `id` ([`ID!`](/docs/partners/truework/scalars/id))
+#### `id` ([`ID!`](https://developer.rippling.com/docs/rippling-graphql/docs/partners/truework/scalars/id.md))
 
 relay group id
 
-#### `dbId` ([`String`](/docs/partners/truework/scalars/string))
+#### `dbId` ([`String`](https://developer.rippling.com/docs/rippling-graphql/docs/partners/truework/scalars/string.md))
 
 internal db id
 
 ### Interfaces
 
-#### [`NotifySubject`](/docs/partners/truework/interfaces/notify-subject)
+#### [`NotifySubject`](https://developer.rippling.com/docs/rippling-graphql/docs/partners/truework/interfaces/notify-subject.md)
 
-#### [`Node`](/docs/partners/truework/interfaces/node)
+#### [`Node`](https://developer.rippling.com/docs/rippling-graphql/docs/partners/truework/interfaces/node.md)

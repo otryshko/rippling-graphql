@@ -13,6 +13,6 @@ directive @specifiedBy(
 
 ### Arguments
 
-#### `url` ([`String!`](/docs/partners/truework/scalars/string))
+#### `url` ([`String!`](https://developer.rippling.com/docs/rippling-graphql/docs/partners/truework/scalars/string.md))
 
 The URL that specifies the behaviour of this scalar.
