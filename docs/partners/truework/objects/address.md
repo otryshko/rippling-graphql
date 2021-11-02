@@ -1,0 +1,31 @@
+---
+id: address
+title: Address
+---
+
+No description
+
+```graphql
+type Address {
+  streetLine1: String
+  streetLine2: String
+  zip: String
+  city: String
+  state: String
+  country: String
+}
+```
+
+### Fields
+
+#### `streetLine1` ([`String`](/docs/partners/truework/scalars/string))
+
+#### `streetLine2` ([`String`](/docs/partners/truework/scalars/string))
+
+#### `zip` ([`String`](/docs/partners/truework/scalars/string))
+
+#### `city` ([`String`](/docs/partners/truework/scalars/string))
+
+#### `state` ([`String`](/docs/partners/truework/scalars/string))
+
+#### `country` ([`String`](/docs/partners/truework/scalars/string))
