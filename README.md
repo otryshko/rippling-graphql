@@ -1,3 +1,36 @@
+# How to update the graphql schema
+
+download the schema, replace the content of truework.graphql
+run `npx docusaurus graphql-to-doc` - it will regenerate bunch of files in sync with the schema
+
+# How to patch website for Stoplight
+
+Switch to stoplight branch
+`git checkout stoplight`
+
+sync the branch with main
+
+`git reset --hard origin/main`
+
+rename mdx files to md
+
+`find docs -name "*.mdx" -exec sh -c 'cp "$1" "${1%.mdx}.md"' _ {} \;`
+
+delete mdx files
+
+`find docs -name "*.mdx" -type f -exec rm {} \;`
+
+patch links to the .md links for stoplight
+
+`find docs -name "*.md" -type f -exec sed -i '.bak' 's|/docs/\([^)#]*\)|docs/\1.md|gI' {} \;`
+
+delete *.bak files generated in the prev step
+
+`find docs -name "*.bak" -type f -exec rm {} \;`
+
+stage all files, commit and force-push stoplight branch
+
+
 # Website
 
 This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
