@@ -1,0 +1,284 @@
+{
+  "items": [
+    {
+      "type": "item",
+      "title": "API Intro",
+      "uri": "docs/intro.md"
+    },
+    {
+      "type": "divider",
+      "title": "partners"
+    },
+    {
+      "type": "group",
+      "title": "truework",
+      "items": [
+        {
+          "type": "item",
+          "title": "Flows",
+          "uri": "docs/partners/truework/generated.md"
+        },
+        {
+          "type": "item",
+          "title": "Changelog",
+          "uri": "docs/partners/truework/changelog.md"
+        },
+        {
+          "type": "item",
+          "title": "Consent Rules",
+          "uri": "docs/partners/truework/consent-rules.md"
+        },
+        {
+          "type": "item",
+          "title": "Webhook",
+          "uri": "docs/partners/truework/webhook.md"
+        },
+        {
+          "type": "group",
+          "title": "directives",
+          "items": [
+            {
+              "type": "item",
+              "title": "deprecated",
+              "uri": "docs/partners/truework/directives/deprecated.md"
+            },
+            {
+              "type": "item",
+              "title": "include",
+              "uri": "docs/partners/truework/directives/include.md"
+            },
+            {
+              "type": "item",
+              "title": "skip",
+              "uri": "docs/partners/truework/directives/skip.md"
+            },
+            {
+              "type": "item",
+              "title": "specifiedBy",
+              "uri": "docs/partners/truework/directives/specified-by.md"
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "title": "enums",
+          "items": [
+            {
+              "type": "item",
+              "title": "CompanyStatus",
+              "uri": "docs/partners/truework/enums/company-status.md"
+            },
+            {
+              "type": "item",
+              "title": "ConsentState",
+              "uri": "docs/partners/truework/enums/consent-state.md"
+            },
+            {
+              "type": "item",
+              "title": "EmploymentType",
+              "uri": "docs/partners/truework/enums/employment-type.md"
+            },
+            {
+              "type": "item",
+              "title": "ExemptionType",
+              "uri": "docs/partners/truework/enums/exemption-type.md"
+            },
+            {
+              "type": "item",
+              "title": "JobSalaryUnit",
+              "uri": "docs/partners/truework/enums/job-salary-unit.md"
+            },
+            {
+              "type": "item",
+              "title": "NotifyAction",
+              "uri": "docs/partners/truework/enums/notify-action.md"
+            },
+            {
+              "type": "item",
+              "title": "RoleState",
+              "uri": "docs/partners/truework/enums/role-state.md"
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "title": "interfaces",
+          "items": [
+            {
+              "type": "item",
+              "title": "Node",
+              "uri": "docs/partners/truework/interfaces/node.md"
+            },
+            {
+              "type": "item",
+              "title": "NotifySubject",
+              "uri": "docs/partners/truework/interfaces/notify-subject.md"
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "title": "mutations",
+          "items": [
+            {
+              "type": "item",
+              "title": "requestEmployeeConsentByThirdParty",
+              "uri": "docs/partners/truework/mutations/request-employee-consent-by-third-party.md"
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "title": "objects",
+          "items": [
+            {
+              "type": "item",
+              "title": "Address",
+              "uri": "docs/partners/truework/objects/address.md"
+            },
+            {
+              "type": "item",
+              "title": "CompanyEmploymentType",
+              "uri": "docs/partners/truework/objects/company-employment-type.md"
+            },
+            {
+              "type": "item",
+              "title": "CompanyTaxInfo",
+              "uri": "docs/partners/truework/objects/company-tax-info.md"
+            },
+            {
+              "type": "item",
+              "title": "Company",
+              "uri": "docs/partners/truework/objects/company.md"
+            },
+            {
+              "type": "item",
+              "title": "EmployeeConsent",
+              "uri": "docs/partners/truework/objects/employee-consent.md"
+            },
+            {
+              "type": "item",
+              "title": "Employee",
+              "uri": "docs/partners/truework/objects/employee.md"
+            },
+            {
+              "type": "item",
+              "title": "EmploymentHistoryRecord",
+              "uri": "docs/partners/truework/objects/employment-history-record.md"
+            },
+            {
+              "type": "item",
+              "title": "Group",
+              "uri": "docs/partners/truework/objects/group.md"
+            },
+            {
+              "type": "item",
+              "title": "Job",
+              "uri": "docs/partners/truework/objects/job.md"
+            },
+            {
+              "type": "item",
+              "title": "NotifyPayload",
+              "uri": "docs/partners/truework/objects/notify-payload.md"
+            },
+            {
+              "type": "item",
+              "title": "PageInfo",
+              "uri": "docs/partners/truework/objects/page-info.md"
+            },
+            {
+              "type": "item",
+              "title": "PayrollCompensation",
+              "uri": "docs/partners/truework/objects/payroll-compensation.md"
+            },
+            {
+              "type": "item",
+              "title": "Paystub",
+              "uri": "docs/partners/truework/objects/paystub.md"
+            },
+            {
+              "type": "item",
+              "title": "RolePayroll",
+              "uri": "docs/partners/truework/objects/role-payroll.md"
+            },
+            {
+              "type": "item",
+              "title": "Role",
+              "uri": "docs/partners/truework/objects/role.md"
+            },
+            {
+              "type": "item",
+              "title": "YearlyCompensation",
+              "uri": "docs/partners/truework/objects/yearly-compensation.md"
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "title": "queries",
+          "items": [
+            {
+              "type": "item",
+              "title": "employeesBySsn",
+              "uri": "docs/partners/truework/queries/employees-by-ssn.md"
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "title": "scalars",
+          "items": [
+            {
+              "type": "item",
+              "title": "Boolean",
+              "uri": "docs/partners/truework/scalars/boolean.md"
+            },
+            {
+              "type": "item",
+              "title": "DateTime",
+              "uri": "docs/partners/truework/scalars/date-time.md"
+            },
+            {
+              "type": "item",
+              "title": "Date",
+              "uri": "docs/partners/truework/scalars/date.md"
+            },
+            {
+              "type": "item",
+              "title": "Decimal",
+              "uri": "docs/partners/truework/scalars/decimal.md"
+            },
+            {
+              "type": "item",
+              "title": "ID",
+              "uri": "docs/partners/truework/scalars/id.md"
+            },
+            {
+              "type": "item",
+              "title": "Int",
+              "uri": "docs/partners/truework/scalars/int.md"
+            },
+            {
+              "type": "item",
+              "title": "String",
+              "uri": "docs/partners/truework/scalars/string.md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "divider",
+      "title": "samples"
+    },
+    {
+      "type": "item",
+      "title": "Python",
+      "uri": "docs/samples/python.md"
+    },
+    {
+      "type": "divider",
+      "title": "APIS"
+    }
+  ]
+}
