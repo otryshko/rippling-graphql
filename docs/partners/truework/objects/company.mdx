@@ -8,6 +8,7 @@ Client company representation
 ```graphql
 type Company implements NotifySubject, Node {
   id: ID!
+  dbId: String
   name: String
   taxInfos: [CompanyTaxInfo!]!
   status: CompanyStatus
@@ -23,6 +24,8 @@ type Company implements NotifySubject, Node {
 #### `id` ([`ID!`](/docs/partners/truework/scalars/id))
 
 Relay company id
+
+#### `dbId` ([`String`](/docs/partners/truework/scalars/string))
 
 #### `name` ([`String`](/docs/partners/truework/scalars/string))
 

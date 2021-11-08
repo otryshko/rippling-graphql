@@ -8,9 +8,8 @@ State of employee consent to share information with Truework
 ```graphql
 type EmployeeConsent {
   state: ConsentState
+  isAllowed: Boolean
   pendingStartedAt: DateTime
-  allowCode: String
-  denyCode: String
 }
 ```
 
@@ -20,10 +19,10 @@ type EmployeeConsent {
 
 state - see type definition for value
 
+#### `isAllowed` ([`Boolean`](/docs/partners/truework/scalars/boolean))
+
+is receiving information allowed
+
 #### `pendingStartedAt` ([`DateTime`](/docs/partners/truework/scalars/date-time))
 
 Used for autoapproval (+12 hours after the pending request)
-
-#### `allowCode` ([`String`](/docs/partners/truework/scalars/string))
-
-#### `denyCode` ([`String`](/docs/partners/truework/scalars/string))

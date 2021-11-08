@@ -41,6 +41,7 @@ query{
     }
     consent{
       state
+      isAllowed
       pendingStartedAt
     }
     dob
@@ -119,17 +120,23 @@ If Rippling knows about the employee, it will respond with basic employee info (
 
 If consent field is empty, it means that employee has never consented to any data sharing requests.
 
+`isAllowed` is a current effective state of the consent 
+
 For consent state values, see [`ConsentState`](/docs/partners/truework/enums/consent-state) enum.
 
 To initiate data sharing, Truework should call 
-[`requestEmployeeConsentByThirdParty`](/docs/partners/truework/mutations/request-employee-consent-by-third-party) mutation passing employee ID obtained from `employeeBySsn` call. It will change employee's consent to `PENDING`.
+[`requestEmployeeConsentByThirdParty`](/docs/partners/truework/mutations/request-employee-consent-by-third-party) mutation passing employee ID obtained from `employeeBySsn` call. It will keep employee's consent state as `ASK` but it will reset `pendingStartedAt` to the current timestamp.
 ```
 mutation {
-  requestEmployeeConsentByThirdParty(employeeId: "RW1wbG95ZWU6NTgzZmQ4OTZlMTVkN2Q5OTI3YTcwNDdl", requestorName: "Loan provider company")
+  requestEmployeeConsentByThirdParty(employeeId: "RW1wbG95ZWU6NTgzZmQ4OTZlMTVkN2Q5OTI3YTcwNDdl", requestorName: "Loan provider company"){
+    state
+    isAllowed
+    pendingStartedAt
+  }
 }
 ```
 
-Employee then will get an email with links to approve or deny data sharing request. After 12 hours of no response, the request will be autoapproved.
+Employee then will get an email with links to approve or deny data sharing request. After 12 hours of no response, the request will be autoapproved (`state` will stay  `ASK` but `isAllowed` would become `true`). After another 24 hours, the request will be un-approved (`isAllowed` would be false).
 
 
 Each company in turn has control over exposing its employees data. If the company enabled Truework integration, it will show up in `roles` array.

@@ -1,5 +1,5 @@
 type Query {
-  """Truework: return information about an employee for loan validation
+  """Truework: return information about an employee for loan validation 
   An array might contain multiple records, but with the same SSN"""
   employeesBySsn(ssn: String!): [Employee]
 }
@@ -24,6 +24,7 @@ type PageInfo {
 type Company implements NotifySubject & Node {
   """Relay company id"""
   id: ID!
+  dbId: String
 
   """Public company name"""
   name: String
@@ -113,11 +114,11 @@ scalar Date
 type EmployeeConsent {
   """state - see type definition for value"""
   state: ConsentState
+  """is receiving information allowed"""
+  isAllowed: Boolean
 
   """Used for autoapproval (+12 hours after the pending request)"""
   pendingStartedAt: DateTime
-  allowCode: String
-  denyCode: String
 }
 
 """Employment position"""
@@ -222,13 +223,37 @@ type Group implements NotifySubject & Node {
   dbId: String
 }
 
+scalar Void
+
 type Mutation {
-  """To be called by Truework to request employee consent to share their payroll/employment info for
-  loan approval purpose"""
+  """To be called by Truework to request employee consent to share their payroll/employment info for loan approval purpose"""
   requestEmployeeConsentByThirdParty(
     employeeId: ID!
     requestorName: String
-  ): ConsentState!
+  ): EmployeeConsent!
+}
+
+type AppInstall implements Node {
+  id: ID!
+  spokeOwner: SpokeOwner
+  installState: AppInstallState
+  installStartedBy: Role
+  installFinishedBy: Role
+}
+
+enum AppInstallState {
+  PARTIAL
+  FINISH
+}
+
+type SpokeOwner implements Node {
+  id: ID!
+  spoke: Spoke!
+}
+
+type Spoke implements Node {
+  id: ID!
+  handle: String
 }
 
 enum ConsentState {

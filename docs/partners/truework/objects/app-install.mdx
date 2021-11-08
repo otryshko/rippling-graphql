@@ -1,0 +1,32 @@
+---
+id: app-install
+title: AppInstall
+---
+
+No description
+
+```graphql
+type AppInstall implements Node {
+  id: ID!
+  spokeOwner: SpokeOwner
+  installState: AppInstallState
+  installStartedBy: Role
+  installFinishedBy: Role
+}
+```
+
+### Fields
+
+#### `id` ([`ID!`](/docs/partners/truework/scalars/id))
+
+#### `spokeOwner` ([`SpokeOwner`](/docs/partners/truework/objects/spoke-owner))
+
+#### `installState` ([`AppInstallState`](/docs/partners/truework/enums/app-install-state))
+
+#### `installStartedBy` ([`Role`](/docs/partners/truework/objects/role))
+
+#### `installFinishedBy` ([`Role`](/docs/partners/truework/objects/role))
+
+### Interfaces
+
+#### [`Node`](/docs/partners/truework/interfaces/node)

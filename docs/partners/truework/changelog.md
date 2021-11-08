@@ -8,6 +8,12 @@ sidebar_position: 4
 
 # Changelog
 
+## 2021-11-08
+
+1. `requestEmployeeConsentByThirdParty` now returs an consent object, not a value.
+2. `isAllowed` on the consent object is the effective consent permission state, while `state` is the current user choice.
+3. Added auto-unapprove after 24-hour window.
+
 ## 2021-10-29
 
 1. Added [`hasHris`](/docs/partners/truework/objects/company#hashris-boolean) and [`hasPayroll`](/docs/partners/truework/objects/company#haspayroll-boolean) properties to [`Company`](/docs/partners/truework/objects/company)

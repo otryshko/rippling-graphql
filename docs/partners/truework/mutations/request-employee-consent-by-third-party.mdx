@@ -3,14 +3,13 @@ id: request-employee-consent-by-third-party
 title: requestEmployeeConsentByThirdParty
 ---
 
-To be called by Truework to request employee consent to share their payroll/employment info for
-loan approval purpose
+To be called by Truework to request employee consent to share their payroll/employment info for loan approval purpose
 
 ```graphql
 requestEmployeeConsentByThirdParty(
   employeeId: ID!
   requestorName: String
-): ConsentState!
+): EmployeeConsent!
 
 ```
 
@@ -22,4 +21,6 @@ requestEmployeeConsentByThirdParty(
 
 ### Type
 
-#### [`ConsentState`](/docs/partners/truework/enums/consent-state)
+#### [`EmployeeConsent`](/docs/partners/truework/objects/employee-consent)
+
+State of employee consent to share information with Truework
