@@ -10,7 +10,7 @@ sidebar_position: 4
 
 ## 2021-11-17
 
-Added `checkDate` and `base` properties to `paycheck` object.
+Added `checkDate` and `base` properties to `Paystub` object.
 
 ## 2021-11-08
 
