@@ -8,6 +8,10 @@ sidebar_position: 4
 
 # Changelog
 
+## 2021-11-17
+
+Added `checkDate` and `base` properties to `paycheck` object.
+
 ## 2021-11-08
 
 1. `requestEmployeeConsentByThirdParty` now returs an consent object, not a value.

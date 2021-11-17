@@ -318,7 +318,9 @@ type PayrollCompensation {
 type Paystub {
   payPeriodStartDate: Date
   payPeriodEndDate: Date
+  checkDate: Date
   gross: Decimal
+  base: Decimal
   bonus: Decimal
   overtime: Decimal
   commission: Decimal

@@ -9,7 +9,9 @@ No description
 type Paystub {
   payPeriodStartDate: Date
   payPeriodEndDate: Date
+  checkDate: Date
   gross: Decimal
+  base: Decimal
   bonus: Decimal
   overtime: Decimal
   commission: Decimal
@@ -24,7 +26,11 @@ type Paystub {
 
 #### `payPeriodEndDate` ([`Date`](/docs/partners/truework/scalars/date))
 
+#### `checkDate` ([`Date`](/docs/partners/truework/scalars/date))
+
 #### `gross` ([`Decimal`](/docs/partners/truework/scalars/decimal))
+
+#### `base` ([`Decimal`](/docs/partners/truework/scalars/decimal))
 
 #### `bonus` ([`Decimal`](/docs/partners/truework/scalars/decimal))
 
