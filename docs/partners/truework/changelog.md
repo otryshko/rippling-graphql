@@ -8,6 +8,10 @@ sidebar_position: 4
 
 # Changelog
 
+## 2022-03-28
+
+Added `legalName` and `doingBusinessAsName` properties to `Company` object.
+
 ## 2021-11-17
 
 Added `checkDate` and `base` properties to `Paystub` object.

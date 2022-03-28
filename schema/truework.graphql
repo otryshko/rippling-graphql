@@ -29,6 +29,13 @@ type Company implements NotifySubject & Node {
   """Public company name"""
   name: String
 
+  """Legal company name"""
+  legalName: String
+
+  """Doing-business-as name"""
+  doingBusinessAsName: String
+
+
   """A list of Employer Identification Numbers registered by the company"""
   taxInfos: [CompanyTaxInfo!]!
   status: CompanyStatus

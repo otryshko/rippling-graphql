@@ -10,6 +10,8 @@ type Company implements NotifySubject, Node {
   id: ID!
   dbId: String
   name: String
+  legalName: String
+  doingBusinessAsName: String
   taxInfos: [CompanyTaxInfo!]!
   status: CompanyStatus
   consent: ConsentState
@@ -30,6 +32,14 @@ Relay company id
 #### `name` ([`String`](/docs/partners/truework/scalars/string))
 
 Public company name
+
+#### `legalName` ([`String`](/docs/partners/truework/scalars/string))
+
+Legal company name
+
+#### `doingBusinessAsName` ([`String`](/docs/partners/truework/scalars/string))
+
+Doing-business-as name
 
 #### `taxInfos` ([`[CompanyTaxInfo!]!`](/docs/partners/truework/objects/company-tax-info))
 
