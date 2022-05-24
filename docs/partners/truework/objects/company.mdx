@@ -12,7 +12,7 @@ type Company implements NotifySubject, Node {
   name: String
   legalName: String
   doingBusinessAsName: String
-  taxInfos: [CompanyTaxInfo!]!
+  taxInfos: [TaxInfo!]!
   status: CompanyStatus
   consent: ConsentState
   address: Address
@@ -41,9 +41,9 @@ Legal company name
 
 Doing-business-as name
 
-#### `taxInfos` ([`[CompanyTaxInfo!]!`](/docs/partners/truework/objects/company-tax-info))
+#### `taxInfos` ([`[TaxInfo!]!`](/docs/partners/truework/objects/tax-info))
 
-A list of Employer Identification Numbers registered by the company
+A list of sub-companies differentiated by EIN
 
 #### `status` ([`CompanyStatus`](/docs/partners/truework/enums/company-status))
 

@@ -16,6 +16,7 @@ type Role implements NotifySubject, Node {
   endDate: Date
   state: RoleState
   job: Job
+  taxInfo: TaxInfo
 }
 ```
 
@@ -48,6 +49,10 @@ Is employee still active, see RoleState enum for reference
 #### `job` ([`Job`](/docs/partners/truework/objects/job))
 
 Job held in this role
+
+#### `taxInfo` ([`TaxInfo`](/docs/partners/truework/objects/tax-info))
+
+sub-company role belongs to or the main company entry
 
 ### Interfaces
 

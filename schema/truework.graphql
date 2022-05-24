@@ -36,8 +36,8 @@ type Company implements NotifySubject & Node {
   doingBusinessAsName: String
 
 
-  """A list of Employer Identification Numbers registered by the company"""
-  taxInfos: [CompanyTaxInfo!]!
+  """A list of sub-companies differentiated by EIN"""
+  taxInfos: [TaxInfo!]!
   status: CompanyStatus
 
   """if DENIED, company info will not be exposed to Truework"""
@@ -148,6 +148,9 @@ type Role implements NotifySubject & Node {
 
   """Job held in this role"""
   job: Job
+
+  """sub-company role belongs to or the main company entry"""
+  taxInfo: TaxInfo
 }
 
 enum RoleState {
@@ -207,9 +210,13 @@ enum ExemptionType {
   NOT_AVAILABLE
 }
 
-type CompanyTaxInfo {
-  id: ID!
-  ein: String!
+"""container for sub-companies information"""
+type TaxInfo{
+    id : ID!
+    ein: String
+    nameWithIrs: String,
+    doingBusinessAsName: String,
+    address: Address
 }
 
 type Address {

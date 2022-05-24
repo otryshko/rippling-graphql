@@ -8,6 +8,10 @@ sidebar_position: 4
 
 # Changelog
 
+## 2022-05-23
+
+Renamed `CompanyTaxInfo` to `TaxInfo`, populated it with more fields (`nameWithIrs`, `doingBusinessAsName` and `address`) and added the `taxInfo` property to it to `Role` type to allow differentiation between employees of different sub-entities.
+
 ## 2022-03-28
 
 Added `legalName` and `doingBusinessAsName` properties to `Company` object.
