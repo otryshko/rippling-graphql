@@ -14,6 +14,6 @@ type EmploymentHistoryRecord {
 
 ### Fields
 
-#### `company` ([`Company`](/docs/partners/truework/objects/company))
+#### `company` ([`Company`](docs/partners/truework/objects/company.md))
 
-#### `roles` ([`[Role]`](/docs/partners/truework/objects/role))
+#### `roles` ([`[Role]`](docs/partners/truework/objects/role.md))

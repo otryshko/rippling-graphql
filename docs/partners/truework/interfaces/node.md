@@ -13,4 +13,4 @@ interface Node {
 
 ### Fields
 
-#### `id` ([`ID!`](/docs/partners/truework/scalars/id))
+#### `id` ([`ID!`](docs/partners/truework/scalars/id.md))

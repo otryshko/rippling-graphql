@@ -11,7 +11,7 @@ sidebar_position: 1
 
 Sandbox graphql playground is available at https://sandbox.rippling.com/api/apps/external/truework/graphql. For authentication, see [Authentication in playground](../../intro#authentication-in-playground)
 
-Truework calls [`employeesBySsn`](/docs/partners/truework/queries/employees-by-ssn) passing in the SSN and the fields it is interested in. The function will return an array of employees with matching SSN (single person will have multiple employee records if they register with different personal email addresses)
+Truework calls [`employeesBySsn`](docs/partners/truework/queries/employees-by-ssn.md) passing in the SSN and the fields it is interested in. The function will return an array of employees with matching SSN (single person will have multiple employee records if they register with different personal email addresses)
 
 ```
 query{
@@ -122,10 +122,10 @@ If consent field is empty, it means that employee has never consented to any dat
 
 `isAllowed` is a current effective state of the consent 
 
-For consent state values, see [`ConsentState`](/docs/partners/truework/enums/consent-state) enum.
+For consent state values, see [`ConsentState`](docs/partners/truework/enums/consent-state.md) enum.
 
 To initiate data sharing, Truework should call 
-[`requestEmployeeConsentByThirdParty`](/docs/partners/truework/mutations/request-employee-consent-by-third-party) mutation passing employee ID obtained from `employeeBySsn` call. It will keep employee's consent state as `ASK` but it will reset `pendingStartedAt` to the current timestamp.
+[`requestEmployeeConsentByThirdParty`](docs/partners/truework/mutations/request-employee-consent-by-third-party.md) mutation passing employee ID obtained from `employeeBySsn` call. It will keep employee's consent state as `ASK` but it will reset `pendingStartedAt` to the current timestamp.
 ```
 mutation {
   requestEmployeeConsentByThirdParty(employeeId: "RW1wbG95ZWU6NTgzZmQ4OTZlMTVkN2Q5OTI3YTcwNDdl", requestorName: "Loan provider company"){

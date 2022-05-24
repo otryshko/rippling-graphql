@@ -13,6 +13,6 @@ directive @include(
 
 ### Arguments
 
-#### `if` ([`Boolean!`](/docs/partners/truework/scalars/boolean))
+#### `if` ([`Boolean!`](docs/partners/truework/scalars/boolean.md))
 
 Included when true.

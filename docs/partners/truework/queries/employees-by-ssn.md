@@ -15,10 +15,10 @@ employeesBySsn(
 
 ### Arguments
 
-#### `ssn` ([`String!`](/docs/partners/truework/scalars/string))
+#### `ssn` ([`String!`](docs/partners/truework/scalars/string.md))
 
 ### Type
 
-#### [`Employee`](/docs/partners/truework/objects/employee)
+#### [`Employee`](docs/partners/truework/objects/employee.md)
 
 Employee record, logically matches a person

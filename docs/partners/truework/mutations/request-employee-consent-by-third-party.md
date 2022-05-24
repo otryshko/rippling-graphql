@@ -15,12 +15,12 @@ requestEmployeeConsentByThirdParty(
 
 ### Arguments
 
-#### `employeeId` ([`ID!`](/docs/partners/truework/scalars/id))
+#### `employeeId` ([`ID!`](docs/partners/truework/scalars/id.md))
 
-#### `requestorName` ([`String`](/docs/partners/truework/scalars/string))
+#### `requestorName` ([`String`](docs/partners/truework/scalars/string.md))
 
 ### Type
 
-#### [`EmployeeConsent`](/docs/partners/truework/objects/employee-consent)
+#### [`EmployeeConsent`](docs/partners/truework/objects/employee-consent.md)
 
 State of employee consent to share information with Truework

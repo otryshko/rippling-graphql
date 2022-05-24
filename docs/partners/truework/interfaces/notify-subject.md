@@ -14,6 +14,6 @@ interface NotifySubject {
 
 ### Fields
 
-#### `id` ([`ID!`](/docs/partners/truework/scalars/id))
+#### `id` ([`ID!`](docs/partners/truework/scalars/id.md))
 
-#### `dbId` ([`String`](/docs/partners/truework/scalars/string))
+#### `dbId` ([`String`](docs/partners/truework/scalars/string.md))

@@ -14,6 +14,6 @@ type YearlyCompensation {
 
 ### Fields
 
-#### `year` ([`Int!`](/docs/partners/truework/scalars/int))
+#### `year` ([`Int!`](docs/partners/truework/scalars/int.md))
 
-#### `compensation` ([`PayrollCompensation`](/docs/partners/truework/objects/payroll-compensation))
+#### `compensation` ([`PayrollCompensation`](docs/partners/truework/objects/payroll-compensation.md))

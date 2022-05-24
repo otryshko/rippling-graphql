@@ -13,6 +13,6 @@ directive @deprecated(
 
 ### Arguments
 
-#### `reason` ([`String`](/docs/partners/truework/scalars/string))
+#### `reason` ([`String`](docs/partners/truework/scalars/string.md))
 
 Explains why this element was deprecated, usually also including a suggestion for how to access supported similar data. Formatted using the Markdown syntax, as specified by [CommonMark](https://commonmark.org/).

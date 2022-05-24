@@ -13,6 +13,6 @@ directive @skip(
 
 ### Arguments
 
-#### `if` ([`Boolean!`](/docs/partners/truework/scalars/boolean))
+#### `if` ([`Boolean!`](docs/partners/truework/scalars/boolean.md))
 
 Skipped when true.
